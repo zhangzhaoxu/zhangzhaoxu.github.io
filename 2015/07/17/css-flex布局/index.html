@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>css_flex布局 | 怀朔</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="怀朔">
+    <meta name="author" content="怀朔">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="怀朔" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">怀朔</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.jpg" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link forWhite">怀朔</a></li>
+                            <li class="nolink"><span class="forWhite">Always </span><span class="forWhite">Creative.</span></li>
+                            
+                            <li><a href="https://github.com/zhangzhaoxu" class="forWhite" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-07-17T08:11:36.000Z" itemprop="datePublished">
+          2015-07-17
+      </time>
+    
+    
+    | 
+    <a href='/tags/css整理/'>css整理</a>
+    
+    
+</span>
+                <h1>css_flex布局</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="css-flex布局"><a href="#css-flex布局" class="headerlink" title="css flex布局"></a>css flex布局</h1><h3 id="flex布局是什么"><a href="#flex布局是什么" class="headerlink" title="flex布局是什么"></a>flex布局是什么</h3><hr>
+<p>意为”弹性布局”,用来为盒状模型提供最大的灵活性。</p>
+<p>任何一个容器都可以指定为Flex布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	display:flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>行内元素也可以使用flex布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	display:inline-flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Webkit内核的浏览器，需加-webkit前缀</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	display:-webkit-flex;</div><div class="line">	display:flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意，设置为flex布局以后，子元素的float，clear和vertical-align属性将失效</p>
+<a id="more"></a>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><hr>
+<p>采用flex布局的元素，称为flex容器。它的所有子元素自动成为容器成员，称为flex项目。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt="image">\</p>
+<p>容器默认存在两根轴：水平的主轴(main axis)和垂直的主轴(cross axis).主轴的开始位置(与边框的交叉点)叫做，main start,结束为止叫做main end，交叉轴的开始位置叫做cross start,结束为止叫做cross end<br>容器的属性</p>
+<h3 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h3><p>以下6个属性设置在容器上：</p>
+<ul>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
+</ul>
+<h3 id="1-felx-direction属性"><a href="#1-felx-direction属性" class="headerlink" title="1.felx-direction属性"></a>1.<code>felx-direction属性</code></h3><hr>
+<p>flex-direction属性决定主轴的方向(即项目的排列方向)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	flex-direction:column|column-reverse|row|row-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt="image"></p>
+<h5 id="它可能有四个值"><a href="#它可能有四个值" class="headerlink" title="它可能有四个值:"></a>它可能有四个值:</h5><ul>
+<li>row（默认值）：主轴为水平方向，起点在左端。</li>
+<li>row-reverse:主轴为水平方向，起点在右端。</li>
+<li>column：主轴为垂直方向，起点在上端</li>
+<li>column-reserve：主轴为垂直方向，起点在下端</li>
+</ul>
+<h3 id="2-flex-wrap属性"><a href="#2-flex-wrap属性" class="headerlink" title="2.flex-wrap属性"></a>2.<code>flex-wrap属性</code></h3><hr>
+<p>默认情况下，项目都排在一条线（又称轴线）上，。flex-wrap属性定义，如果一条轴线排不下，如何换行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	flex-wrap: nowrap|wrap|wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>它可能取三个值：</p>
+<ul>
+<li><code>nowrap</code>（默认），不换行<br>  <img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png" alt="image"></li>
+<li><code>wrap</code>：换行，第一行在上方<br>  <img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg" alt="image"></li>
+<li><code>wrap-reverse</code>:换行，第一行在下方<br>  <img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg" alt="image"></li>
+</ul>
+<h3 id="3-flex-flow"><a href="#3-flex-flow" class="headerlink" title="3.flex-flow"></a>3.<code>flex-flow</code></h3><hr>
+<p><code>flex-flow</code>属性是<code>flex-direction</code>属性和<code>flex-wrap</code>属性的简写形式，默认值为row-nowrap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	justify-content:flex-start|flex-end|center|space-between|space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4-justify-content"><a href="#4-justify-content" class="headerlink" title="4.justify-content"></a>4.<code>justify-content</code></h3><hr>
+<p>justify-content属性定义了项目再主轴上的对齐方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	justify-content:flex-start|flex-end|center|space-between|space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt="image"></p>
+<p>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右：</p>
+<ul>
+<li>flex-start(默认值):左对齐</li>
+<li>flex-end：右对齐</li>
+<li>center：居中</li>
+<li>space-between：两端对齐，项目之间的间隔都相等</li>
+<li>space-around：每个项目两侧的间隔都相等。所以，项目之间的间隔比项目与边框的间隔大一倍</li>
+</ul>
+<h3 id="5-align-items属性"><a href="#5-align-items属性" class="headerlink" title="5.align-items属性"></a>5.<code>align-items</code>属性</h3><hr>
+<p>align-items属性定义项目再交叉轴上如何对齐</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	align-items: flex-start|flex-end|center|baseline|stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。</p>
+<ul>
+<li>flex-start:交叉轴的起点对齐</li>
+<li>flex-end:交叉轴的终点对齐</li>
+<li>center:交叉轴的中点对齐</li>
+<li>baseline:项目的第一行文字的基线对齐</li>
+<li>stretch(默认值):如果项目未设置高度或设为auto，将占满整个容器的高度</li>
+</ul>
+<h3 id="6-align-content属性"><a href="#6-align-content属性" class="headerlink" title="6.align-content属性"></a>6.<code>align-content</code>属性</h3><hr>
+<p><code>align-content</code>属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	align-content:flex-start|flex-end|center|space-between|space-around|strech;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt="image"></p>
+<p>该属性可能取6个值</p>
+<ul>
+<li>flex-start：与交叉轴的起点对齐</li>
+<li>flex-end:与交叉轴的终点对齐</li>
+<li>center:与交叉轴的中点对齐</li>
+<li>space-between：与交叉轴的两端对齐，轴线之间的间隔平均分布.</li>
+<li>space-around:每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍</li>
+<li>stretch(默认值):轴线占满整个交叉轴 </li>
+</ul>
+<p>##项目的属性</p>
+<h3 id="1-order"><a href="#1-order" class="headerlink" title="1.order"></a>1.<code>order</code></h3><hr>
+<p><strong>order</strong>属性定义项目的排列顺序。数值越小，排列越靠前，默认为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item&#123;</div><div class="line">	order:&lt;integer&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt="image"></p>
+<h3 id="2-flex-grow"><a href="#2-flex-grow" class="headerlink" title="2.flex-grow"></a>2.<code>flex-grow</code></h3><hr>
+<p>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item&#123;</div><div class="line">	flex-grow:&lt;number&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png" alt="image"></p>
+<p>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间(如果有的话。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍</p>
+<h3 id="3-flex-shrink"><a href="#3-flex-shrink" class="headerlink" title="3.flex-shrink"></a>3.<code>flex-shrink</code></h3><hr>
+<p>flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目缩小。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item&#123;</div><div class="line">	flex-shrink:&lt;number&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg" alt="image"></p>
+<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性都为0，其他项目都为1，则空间不足时，前者不缩小。<br>负值对该属性无效</p>
+<h3 id="4-flex-basis"><a href="#4-flex-basis" class="headerlink" title="4.flex-basis"></a>4.<code>flex-basis</code></h3><hr>
+<p>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间(main size).浏览器根据这个属性，计算主轴是否有多余空间，它的默认值为auto，即项目的本来大小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item&#123;</div><div class="line">	flex-basis:&lt;length&gt;|auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>它可以设为跟width或height属性一样的值（比如20px），则项目将占据固定空间。</p>
+<h3 id="5-flex"><a href="#5-flex" class="headerlink" title="5.flex"></a>5.<code>flex</code></h3><hr>
+<p>flex属性是flex-grow，flex-shrink和flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item&#123;</div><div class="line">	flex:none||[&lt;flex-grow&gt; &lt;&apos;flex-shrink&apos;&gt;?||&lt;&apos;flex-basis&apos;&gt;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>该属性有两个快捷值：<code>auto（1,1，auoto）</code>和<code>none（0,0，auto</code><br>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+<h3 id="6-align-self"><a href="#6-align-self" class="headerlink" title="6.align-self"></a>6.<code>align-self</code></h3><hr>
+<p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-item属性，如果没有父元素，则等同于stretch。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item&#123;</div><div class="line">	align-self:auto|flex-start|flex-end|center|baseline|stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt="image"></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/06/30/socket-io的基本应用及官网例子实现/" style="float: left;">
+        ← socket.io的基本应用及官网例子实现
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/07/21/网页自适应的设计方法/">
+        网页自适应的设计方法 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 怀朔. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/zhangzhaoxu" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>正则表达式总结 | 怀朔</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="怀朔">
+    <meta name="author" content="怀朔">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="怀朔" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">怀朔</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.jpg" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link forWhite">怀朔</a></li>
+                            <li class="nolink"><span class="forWhite">Always </span><span class="forWhite">Creative.</span></li>
+                            
+                            <li><a href="https://github.com/zhangzhaoxu" class="forWhite" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-04-23T08:04:46.000Z" itemprop="datePublished">
+          2016-04-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/js基础/'>js基础</a>
+    
+    
+</span>
+                <h1>正则表达式总结</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="正则表达式总结"><a href="#正则表达式总结" class="headerlink" title="正则表达式总结"></a>正则表达式总结</h3><h3 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h3><p>虽然常用的网上一搜就有现成的，但还是自己会的好，所以就强逼着自己看了一下这无聊的东西，顺便从网上觉得不错的，加上点自己的看法，练练笔熟悉一下</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>我理解的正则表达式就是一种字符串处理技术，js里有许多的字符串处理函数，比如<code>split()</code>,<code>indexOf()</code>,<code>subString()</code>等等，而正则表示式是比这些都要强大的东西，让我们几乎可以随心所欲的处理字符串，当然看着恶心╮(╯_╰)╭</p>
+<a id="more"></a>
+<h3 id="如何定义正则表达式"><a href="#如何定义正则表达式" class="headerlink" title="如何定义正则表达式"></a>如何定义正则表达式</h3><p>####定义正则表达式有两种方式，一种是普通方式，一种是构造函数方式</p>
+<p><strong>普通方式</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var regx = /表达式/附加参数</div></pre></td></tr></table></figure>
+<p>表达式：一个字符串，代表了某种规则，其中可以使用某些特殊字符，来代表特殊的规则。</p>
+<p>附加参数：用来扩展表达式的含义，目前主要有三个参数：</p>
+<ul>
+<li>g： 代表进行全局屁屁额</li>
+<li>i：代表不区分大小写匹配</li>
+<li>m：代表可以进行多行匹配</li>
+</ul>
+<p><strong>构造函数方式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var regx = new RegExp(&quot;表达式&quot;,&quot;附加参数&quot;)；</div></pre></td></tr></table></figure>
+<p>普通方式中的表达式必须是一个常量字符串，而构造函数中的表达式可以是常量字符串，也可以是一个js变量，例如根据用户的输入来作为表达式参数等等：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var reg=new RegExp(document.forms[0].exprfiled.value,”g”);</div></pre></td></tr></table></figure>
+<h3 id="js中的表达式操作方法"><a href="#js中的表达式操作方法" class="headerlink" title="js中的表达式操作方法"></a>js中的表达式操作方法</h3><p>先把方法列出来以及一些小的例子。这些方法都有相同之处，它们需要一个 <strong>规则</strong> 这个 <strong>规则</strong> 代表了如何处理字符串，然后通过这个 <strong>规则</strong> 去验证字符串，或者字符串去匹配规则来达到我们的目的。</p>
+<h4 id="1-exec-字符串"><a href="#1-exec-字符串" class="headerlink" title="1.exec(字符串)"></a>1.exec(字符串)</h4><p>这个方法返回 <strong>字符串</strong> 中与定义的 <strong>规则</strong> 相匹配的 <strong>第一个</strong> 字符串，而且以数组的方式返回。而且如果这个 <strong>规则</strong> 中含有用于捕获用的 <strong>小括号</strong> (之后会详细讲解)，则返回的数组中也可能含有 <strong>()</strong> 中匹配的字符串，下面举两个小例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var regx = /\d+/; //这是定义的规则</div><div class="line">var rs = regx.exec(&apos;23423adfsdf&apos;); //通过这个规则调用函数exex对字符串‘23423adfsdf’进行处理</div></pre></td></tr></table></figure>
+<p>返回的rs值为：[“23423”, index: 0, input: “23423adfsdf”]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var regx2 = new RegExp(/ab(\d+)c/); //这是通过对象方法构造规则，与上无异</div><div class="line">var rsw = regx2.exec(&quot;ab234c44&quot;);</div></pre></td></tr></table></figure>
+<p>这里加了小括号，小括号捕获的值也会填充到返回的数组中：</p>
+<p>[“ab234c”, “234”, index: 0, input: “ab234c44”]</p>
+<p>另外有很好玩的一点是，如果有多个合适的匹配，则第一次执行 <strong>exec</strong> 函数的时候只会返回第一个，但此时继续执行 <strong>exec</strong> 函数,则依次返回第二个第三个一直往后个匹配。来个小例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var regx=/user\d/g;</div><div class="line">var rs=regx.exec(&quot;ddduser1dsfuser2dd&quot;);</div><div class="line">var rs1=regx.exec(&quot;ddduser1dsfuser2dd&quot;);</div></pre></td></tr></table></figure>
+<p>这时的返回结果是：</p>
+<p>[“user1”, index: 3, input: “ddduser1dsfuser2dd”] <br><br>[“user2”, index: 11, input: “ddduser1dsfuser2dd”]</p>
+<h4 id="2-test-str"><a href="#2-test-str" class="headerlink" title="2.test(str)"></a>2.test(str)</h4><p>顾名思义，这个方式是判断字符串str是否符合我们定义的 <strong>规则</strong> ，返回一个布尔值。小例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var regx = /user\d+/g;</div><div class="line">var flaf = regx.test(&quot;user12dd&quot;);</div></pre></td></tr></table></figure>
+<p>返回flag = true；</p>
+<h4 id="3-String对象方法"><a href="#3-String对象方法" class="headerlink" title="3.String对象方法"></a>3.String对象方法</h4><p><strong> match(规则) </strong></p>
+<p>这个方法返回与 <strong>规则</strong> 相匹配的一个字符串数组，如果没有参数 <strong>g</strong> ，则返回第一个匹配，反之则返回所有的匹配。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var regx = /user\d/g;</div><div class="line">var str = &quot;user12userddduser345&quot;;</div><div class="line">var rs = str.match(regx);</div></pre></td></tr></table></figure>
+<p>返回的值为： [“user1”, “user3”]；</p>
+<p><strong> search(规则) </strong></p>
+<p>这个方法返回字符串中与 <strong>规则</strong> 第一个匹配的 <strong>index</strong> 值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var regx = /user\d/g;</div><div class="line">var str = &quot;user12userddduser345&quot;;</div><div class="line">var rs = str.search(regx);</div></pre></td></tr></table></figure>
+<p>rs的值为： 0；</p>
+<p><strong> replace(expr，str) </strong></p>
+<p>这个方法的作用是： 将字符串中与 <strong>expr</strong> 相匹配的部分替换为 <strong>str</strong>。 另外在 <code>replace</code>方法中， <strong>str</strong> 可以含有一种变量符号 <strong>$</strong> ,格式为 <strong>$n</strong> ,代表匹配中被记住的第n个匹配字符串 (注意小括号可以记忆匹配),来两个小例子更容易理解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var regx = /user\d/g;</div><div class="line">var str=&quot;user13userddduser345&quot;;</div><div class="line">var rs=str.replace(regx,&quot;00&quot;);</div></pre></td></tr></table></figure>
+<p>返回值为： 003userddd0045</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var regx = /u(se)\d/g;</div><div class="line">var str=&quot;user13userddduser345&quot;;</div><div class="line">var rs=str.replace(regx,&quot;$1&quot;);</div></pre></td></tr></table></figure>
+<p>返回值为： se3userdddse45</p>
+<p>对于这个方法需要特别注意一点，如果 <strong>expr</strong> 是一个正则表达式 <strong>规则</strong> ，并且 <strong>规则</strong> 附加参数g，则会进行全局匹配(会替换字符串中所有的匹配)，如果没有参数g或者 <strong>expr</strong> 是一个字符串对象，则只会替换第一个匹配。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var regx = &quot;user&quot;;</div><div class="line">var str=&quot;user13userddduser345&quot;;</div><div class="line">var rs=str.replace(regx,&quot;00&quot;);</div></pre></td></tr></table></figure>
+<p>此时regx的值为： 0013userddduser345</p>
+<p><strong> split(expr) </strong></p>
+<p>这个方法的作用是以匹配 <strong>expr</strong> 的部分做分割，返回一个数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var regx = /user\d/g;</div><div class="line">var str = &quot;user13userddduser345&quot;;</div><div class="line">var rs = str.split(regx);</div></pre></td></tr></table></figure>
+<p>这个方法返回的值为： [“”, “3userddd”, “45”]</p>
+<h3 id="表达式相关属性"><a href="#表达式相关属性" class="headerlink" title="表达式相关属性"></a>表达式相关属性</h3><p>表达式相关属性，是指和表达式相关的属性，如下面的形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var regx = /myexpr/;</div><div class="line">var rs = regx.exec(str);</div></pre></td></tr></table></figure>
+<p>其中，和表达式自身 <strong>regx</strong> 相关的属性有两个， 和表达式匹配结果 <strong>rs</strong> 相关的属性有三个，下面逐一介绍</p>
+<p><strong> 和表达式相关的属性 </strong></p>
+<ul>
+<li><strong>lastIndex</strong> ,返回开始下一个匹配的位置，注意必须是全局匹配(即表达式中带有g参数)时， <strong>lastIndex</strong> 才会有不断返回下一个匹配，否则该值总是会返回第一个下一个的匹配的位置，来个小例子：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var regx = /user\d/;</div><div class="line">var rs = regx.exec(&quot;sdsfuser1dfsfuser2&quot;);</div><div class="line">var lastIndex1 = regx.lastIndex;</div><div class="line">rs = regx.exec(&quot;sdsfuser1dfsfuser2&quot;);</div><div class="line">var lastIndex2 = regx.lastIndex;</div><div class="line">rs = regx.exec(&quot;sdsfuser1dfsfuser2&quot;);</div><div class="line">var lastIndex3 = regx.lastIndex;</div></pre></td></tr></table></figure>
+<p>这段执行之后lastIndex1的值为9，lastIndex2的值也为9，第三个也是9； 如果表达式为 <code>regx=/user\d/g</code> ，则第一个为9，第二个为18，第三个为0；</p>
+<ul>
+<li><p><strong>source</strong> ，返回表达式字符串本身，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var regx = /user\d/;</div><div class="line">var rs = regx.exec(&quot;sdsfuser1asdfa&quot;);</div><div class="line">var source = regx.source;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p> source的值为 <strong>user\d</strong></p>
+<p> <strong> 和匹配结果相关的三个属性 </strong></p>
+<ul>
+<li><p><strong>index</strong> 返回当前匹配的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">	var regx=/user\d/;</div><div class="line">var rs=regx.exec(“sdsfuser1dfsfuser2”);</div><div class="line">var index1=rs.index;</div><div class="line">rs=regx.exec(“sdsfuser1dfsfuser2”);</div><div class="line">var index2=rs.index; </div><div class="line">rs=regx.exec(“sdsfuser1dfsfuser2”);</div><div class="line">var index3=rs.index;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p> index1为4，index2为4，index3为4，如果表达式加入参数g，则index1为4，index2为13，index3会报错。</p>
+<ul>
+<li><p><strong>input</strong> ，用于匹配的字符串本身。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var regx = /user\d/;</div><div class="line">var rs = (&quot;sdsfuser1dfsfuser2&quot;);</div><div class="line">var input = rs.input;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p> input的值为 “sdsfuser1dfsfuser2”；</p>
+<ul>
+<li><p><strong>[0]</strong> 返回匹配结果的第一个匹配值， 对于 <strong>match</strong> 而言可能返回一个多值的数字,则除了 <strong>0</strong> 外，还可以取[1],[2]….</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var regx = /user\d/;</div><div class="line">var rs = regx.exec(&quot;sdsfuser1dfsfuser2&quot;);</div><div class="line">var value1 = rs[0];</div><div class="line">rs = regx.exec(&quot;sdsfuser1dfsfuser2&quot;);</div><div class="line">var value2 = rs[0];</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p> value1的值为user1，value2的值为user2；</p>
+<p> 上面的这些先放在这里，接下来讲的是如何写出我们想要的 <strong>规则</strong>：</p>
+<h3 id="正则表示规则"><a href="#正则表示规则" class="headerlink" title="正则表示规则"></a>正则表示规则</h3><h4 id="普通字符"><a href="#普通字符" class="headerlink" title="普通字符"></a>普通字符</h4><p>字母，数字，汉字，下划线，以后后面文章中没有定义的特殊符号，都是 <strong>普通字符</strong> 。表达式中的普通字符，在匹配一个字符串的时候，匹配与之相同的一个字符。</p>
+<p><strong> 举例 </strong></p>
+<ul>
+<li>表达式 “c”，在匹配字符串 “abcde” 时，匹配结果是：成功；匹配到的内容是：”c”；匹配到的位置是：开始于2，结束于3。</li>
+<li>表达式 “bcd”，在匹配字符串 “abcde” 时，匹配结果是：成功；匹配到的内容是：”bcd”；匹配到的位置是：开始于1，结束于4。</li>
+</ul>
+<h4 id="简单的转义字符"><a href="#简单的转义字符" class="headerlink" title="简单的转义字符"></a>简单的转义字符</h4><p>一些不便书写的字符，采用在前面加 <strong>\</strong>的方法。</p>
+<ul>
+<li><strong>\r</strong> <strong>\n</strong> 回车和换行符</li>
+<li><strong>\t</strong> 制表符</li>
+</ul>
+<p>一些有特殊作用的标点符号，在前面加 <strong>\</strong>后，就代表符号本身</p>
+<ul>
+<li><strong>\/</strong> “/“本身</li>
+<li><strong>\^</strong> “^”本身</li>
+<li><strong>\$</strong> “$”本身</li>
+<li>……</li>
+</ul>
+<h4 id="能够与“多种字符”匹配的表达式"><a href="#能够与“多种字符”匹配的表达式" class="headerlink" title="能够与“多种字符”匹配的表达式"></a>能够与“多种字符”匹配的表达式</h4><p>正则表达式中有一些表示方法，可以匹配“多种字符”其中的任意一个字符。比如，表达式 <strong>“\d”</strong> 可以匹配任意一个数字。虽然可以匹配其中任意字符，但是只能是一个，不收多个。</p>
+<ul>
+<li><strong>\d</strong> 任意一个数字</li>
+<li><strong>\w</strong> 任意一个字母或数字或下划线</li>
+<li><strong>\s</strong> 包括空格，制表符，换页符等空白字符的其中任意一个</li>
+<li><strong>.</strong>  小数点可以匹配除了换行符 <strong>\n</strong> 意外的任意一个字符</li>
+</ul>
+<p>举例：</p>
+<ol>
+<li>/\d\d/,在匹配“abc123”时，匹配的结果是： 成功，匹配到的内容是： “12”； 匹配到的位置是： 开始于3，结束于5；</li>
+<li>/a.\d/,在匹配“aaa100”时，匹配的结果是： 成功，匹配到的内容是：“a11”； 匹配到的位置是： 开始于1，结束于4；</li>
+</ol>
+<h4 id="自定义能够匹配“多种字符”的表达式"><a href="#自定义能够匹配“多种字符”的表达式" class="headerlink" title="自定义能够匹配“多种字符”的表达式"></a>自定义能够匹配“多种字符”的表达式</h4><p>使用方括号 <strong>[]</strong> 包含一系列字符，能够匹配其中任意一个字符。用 <strong>^</strong> 包含一系列字符，则能够匹配其中字符之外的任意一个字符。同样的道理，虽然可以匹配其中任意一个，但是只能匹配一个，不能匹配多个。</p>
+<ul>
+<li><strong>/[a5@]/</strong> ,匹配“a”或“5”或“@”</li>
+<li><strong>/[^a5@]/</strong> ,匹配“a”，“5”，“@”之外的任意一个字符</li>
+<li><strong>/[f-k]/</strong> ,匹配f-k之间的任意一个字母</li>
+<li><strong>/[^A-F0-3]/</strong> ,匹配“A”-“F”，“0”-“3”之外的任意一个字符</li>
+</ul>
+<p>距离：</p>
+<ol>
+<li>/[bad][bcd]/，在匹配“abc123”时，匹配的结果是：成功；匹配到的内容是: “bc”;匹配到的位置是开始于1，结束于3.</li>
+<li>/[^abc]/，在匹配“abc124”时， 匹配的结果是： 成功； 匹配到的内容是： “1”； 匹配到的位置是： 开始于3，结束语4.</li>
+</ol>
+<h4 id="修饰匹配次数的特殊符号"><a href="#修饰匹配次数的特殊符号" class="headerlink" title="修饰匹配次数的特殊符号"></a>修饰匹配次数的特殊符号</h4><p>前面章节中讲到的表达式，无路时只能匹配一种字符的表达式，还是可以匹配多种字符其中任意一个的表达式，都只能匹配一次。但如果使用表达式再加上修饰匹配次数的特殊符号，那么就可以匹配多次。</p>
+<p>使用方法是： “次数修饰”放在“被修饰的表达式”后边。比如：<code>[bad][bad]</code> 可以写成 <code>[bad]{2}</code> </p>
+<ul>
+<li><strong>{n}</strong> :表达式重复n次，比如： <code>/\w{2}/</code>相当于 <code>/\w\w/</code> ; <code>/a{5}/</code> 相当于 <code>/aaaaa/</code></li>
+<li><strong>{m,n}</strong> :表达式至少重复m次，至多重复n次，比如： <code>/ba{1,3}/</code> 可以匹配 “ba”，“baa”，“baaa”</li>
+<li><strong>{m,}</strong> :表示至少重复m次，比如 <code>/\w\d{2,}/</code> 可以匹配 “a12”，“_456”，“M12344”…</li>
+<li><strong>?</strong> :表示匹配表达式0次或者1次，相当于 <strong>{0,1}</strong> ,比如：<code>/a[cd]?/</code> 可以匹配 “a”，“ac”，“ad”</li>
+<li><strong>+</strong> : 表示表达式至少出现一次，相当于 <strong>{1,}</strong> ,比如 <code>/a+b/</code> 可以匹配“ab”，“aab”，“aaab”…</li>
+<li><strong> “*” </strong> :表示表达式不出现或出现任意次，相当于 {0,}，比如： <code>/\^*b/</code> 可以匹配 “b”，“^^^b”…</li>
+</ul>
+<h4 id="其他一些代表抽象意义的特殊字符"><a href="#其他一些代表抽象意义的特殊字符" class="headerlink" title="其他一些代表抽象意义的特殊字符"></a>其他一些代表抽象意义的特殊字符</h4><p>一些符号在表达式中代表抽象的特殊意义：</p>
+<ul>
+<li><strong>^</strong> : 与字符串开始的地方匹配，不匹配任何字符</li>
+<li><strong>$</strong> : 与字符串结束的地方匹配，不匹配任何字符</li>
+<li><strong>\b</strong> : 匹配一个单词边界，也就是单侧和空格之间的位置，不匹配任何字符</li>
+</ul>
+<p>通过举例来说明更加清晰一些：</p>
+<ul>
+<li>举例1：表达式 <code>/^aaa/</code> 在匹配 “xxx aaa xxx” 时，匹配的结果是： 失败。因为 <strong>^</strong> 要求与字符串开始的地方匹配，因此只有当 “aaa” 位于字符串开始的时候，“^aaa”才能匹配，比如： “aaa xxx xxx”</li>
+<li>举例2：表达式 <code>/aaa$/</code> 在匹配 “xxx aaa xxx” 时，匹配的结果是： 失败。 因为 <strong>$</strong> 要求与字符串结束的地方匹配，因此，只有当“aaa”，位于字符串结尾的时候， <code>/aaa$/</code> 才能匹配，比如：“xxx xxx aaa”</li>
+<li>举例3：表达式 <code>/.\b./</code> 在匹配“@@@abc”时，匹配的结果是： 成功；匹配到的内容是： “@a”；匹配到的位置是开始于2，结束于4。进一步说明，“\b”与“^”,“$”类似，本身不匹配任何字符，但是它要求它在匹配结果中所处位置的左右两边，其中一边是“\w”，另一边是非“\w”</li>
+<li>举例4: 表达式 <code>/\bend\b/</code> 在匹配 “weekend,endfor,end” 时，匹配的解说是： 成功；匹配到的内容是： “end”；匹配到的位置是：开始于15，结束于18.</li>
+</ul>
+<p>一些符号可以影响表达式内部的子表达式之间的关系：</p>
+<ul>
+<li><strong>|</strong> 左右两边表达式“或”关系，匹配左边或者右边</li>
+<li><p><strong>( )</strong> 1.再被修饰匹配次数的时候，括号中的表达式可以作为整体被修饰；2.取匹配结果的时候，括号中的表达式匹配到的内容可以被单独得到</p>
+</li>
+<li><p>举例5: 表达式 <code>/Tom|Jack/</code> 在匹配字符串 “I’m Tom, he is Jack” 时，匹配结果是：成功；匹配到的内容是：”Tom”；匹配到的位置是：开始于4，结束于7。匹配下一个时，匹配结果是：成功；匹配到的内容是：”Jack”；匹配到的位置时：开始于15，结束于19</p>
+</li>
+<li>举例6: 表达式 <code>/(go\s)+/</code> 在匹配 “Let’s go go go!” 时，匹配结果是：成功；匹配到内容是：”go go go”；匹配到的位置是：开始于6，结束于14。</li>
+<li>举例7: 表达式 <code>/￥(\d+\.?\d/)</code> 在匹配 “＄10.9,￥20.5” 时，匹配的结果是：成功；匹配到的内容是：”￥20.5”；匹配到的位置是：开始于6，结束于10。单独获取括号范围匹配到的内容是：”20.5”</li>
+</ul>
+<h4 id="正则表达式中的一些高级规则"><a href="#正则表达式中的一些高级规则" class="headerlink" title="正则表达式中的一些高级规则"></a>正则表达式中的一些高级规则</h4><p><strong>匹配次数中的贪婪与非贪婪</strong></p>
+<p>1.贪婪模式</p>
+<p>在使用修饰匹配字数的特殊符号是，有几种表示方法可以使同一个表达式能够匹配不同的次数，不如： <code>/\d{m,n}/</code>,<code>/.?/</code>…..,具体匹配的次数随被匹配的字符串而定。这种重复匹配不定次数的表达式在匹配过程中，总是尽可能多的匹配。比如，针对文本 “dxxxdxxxd”，距离如下：</p>
+<ul>
+<li><code>/(d)(\w+)/</code> ,其中 <code>\w+</code>将匹配第一个“d”之后的所有字符“xxxdxxxd”</li>
+<li><code>/(d)(\w+)(d)/</code>, 其中 <code>\w+</code>将匹配第一个“d”和最后一个“d”之间的所有字符“xxxdxxx”。虽然“\w+”也能够匹配上最后一个“d”，但是为了使整个表达式匹配成功，“\w+”可以“让出”它原本能够匹配的最后一个“d”</li>
+</ul>
+<p>由此可见，”/w+” 在匹配的时候，总是尽可能多的匹配符合它规则的字符。虽然第二个举例中，它没有匹配最后一个 “d”，但那也是为了让整个表达式能够匹配成功。同理，带 “*” 和 “{m,n}” 的表达式都是尽可能地多匹配，带 “?” 的表达式在可匹配可不匹配的时候，也是尽可能的 “要匹配”。这 种匹配原则就叫作 “贪婪” 模式 。</p>
+<p>2.非贪婪模式</p>
+<p>在修饰匹配次数的特殊符号后再加上一个 “?” 号，则可以使匹配次数不定的表达式尽可能少的匹配，使可匹配可不匹配的表达式，尽可能的 “不匹配”。这种匹配原则叫作 “非贪婪” 模式，也叫作 “勉强” 模式。如果少匹配就会导致整个表达式匹配失败的时候，与贪婪模式类似，非贪婪模式会最小限度的再匹配一些，以使整个表达式匹配成功。举例如下，针对文本 “dxxxdxxxd” 举例：</p>
+<ul>
+<li><code>/(d)(\w+?)/</code> 其中 <code>\w+?</code> 将尽可能少的匹配得一个“d”之后的字符，结果是： “\w+?” 只匹配了一个“x”</li>
+<li><code>/(d)(\w+?)(d)/</code> 为了让整个表达式匹配成功， “\w+?”不得不匹配“xxx”才可以让后边的“d”匹配，从而使整个表达式匹配成功。因此，结果是： “\w+?” 匹配“xxx”</li>
+</ul>
+<p>更多的情况，举例如下：</p>
+<ul>
+<li>表达式 <code>/&lt;td&gt;(.*)&lt;/td&gt;/</code> 与字符串 <code>&lt;td&gt;&lt;p&gt;aa&lt;/p&gt;&lt;/td&gt; &lt;td&gt;&lt;p&gt;bb&lt;/p&gt;&lt;/td&gt;</code> 匹配时，匹配的结果是：成功；匹配到的内容是 <code>&lt;td&gt;&lt;p&gt;aa&lt;/p&gt;&lt;/td&gt; &lt;td&gt;&lt;p&gt;bb&lt;/p&gt;&lt;/td&gt;</code> 整个字符串， 表达式中的 <code>&lt;/td&gt;</code> 将与字符串中最后一个 <code>&lt;/td&gt;</code> 匹配。</li>
+<li>相比之下，表达式 <code>/&lt;td&gt;(.*?)&lt;/td&gt;/</code> 匹配举例1中同样的字符串时，将只得到 <code>&lt;td&gt;&lt;p&gt;aa&lt;/p&gt;&lt;/td&gt;</code>， 再次匹配下一个时，可以得到第二个 <code>&lt;td&gt;&lt;p&gt;bb&lt;/p&gt;&lt;/td&gt;</code>。</li>
+</ul>
+<h4 id="反向引用"><a href="#反向引用" class="headerlink" title="反向引用"></a>反向引用</h4><p>表达式在匹配时，表达式引擎会将小括号 “( )” 包含的表达式所匹配到的字符串记录下来。在获取匹配结果的时候，小括号包含的表达式所匹配到的字符串可以单独获取。这一点，在前面的举例中，已经多次展示了。在实际应用场合中，当用某种边界来查找，而所要获取的内容又不包含边界时，必须使用小括号来指定所要的范围。比如前面的 <code>&lt;td&gt;(.*?)&lt;/td&gt;</code>。</p>
+<p>其实，”小括号包含的表达式所匹配到的字符串” 不仅是在匹配结束后才可以使用，在匹配过程中也可以使用。表达式后边的部分，可以引用前面 “括号内的子匹配已经匹配到的字符串”。引用方法是 “\” 加上一个数字。”\1” 引用第1对括号内匹配到的字符串，”\2” 引用第2对括号内匹配到的字符串……以此类推，如果一对括号内包含另一对括号，则外层的括号先排序号。换句话说，哪一对的左括号 “(“ 在前，那这一对就先排序号。</p>
+<p>举例：</p>
+<ul>
+<li>表达式 <code>/(&#39;|&quot;)(.*?)(\1)/</code> 在匹配”‘Hello’,”World””时，匹配结果是：成功；匹配到的内容是：” ‘Hello’ “。再次匹配下一个时，可以匹配到 “ “World” “。</li>
+<li>表达式 <code>/(\w)\1{4,}/</code> 在匹配 “aa bbbb abcdefg ccccc 111121111 999999999” 时，匹配结果是：成功；匹配到的内容是 “ccccc”。再次匹配下一个时，将得到 999999999。这个表达式要求 “/w” 范围的字符至少重复5次，注意与 “/w{5,}” 之间的区别。 </li>
+<li>表达式 <code>/&lt;(\w+)\s*(\w+(=(&#39;|&quot;).*?\4)?\s*)*&gt;.*?&lt;\/\1&gt;/</code> 在匹配 “<td id="td1" style="bgcolor:white"></td>“ 时，匹配结果是成功。如果 “<td>“ 与 “</td>“ 不配对，则会匹配失败；如果改成其他配对，也可以匹配成功。</li>
+</ul>
+<h4 id="预搜索，不匹配；方向预搜索，不匹配"><a href="#预搜索，不匹配；方向预搜索，不匹配" class="headerlink" title="预搜索，不匹配；方向预搜索，不匹配"></a>预搜索，不匹配；方向预搜索，不匹配</h4><p>前面的章节中，我讲到了几个代表抽象意义的特殊符号：”^”，”$”，”/b”。它们都有一个共同点，那就是：它们本身不匹配任何字符，只是对 “字符串的两头” 或者 “字符之间的缝隙” 附加了一个条件。理解到这个概念以后，本节将继续介绍另外一种对 “两头” 或者 “缝隙” 附加条件的，更加灵活的表示方法。</p>
+<p><strong> 正向预搜索： “(?=xxxx)”,”(?!xxxx)” </strong></p>
+<p>  格式：”(?=xxxxx)”，在被匹配的字符串中，它对所处的 “缝隙” 或者 “两头” 附加的条件是：所在缝隙的右侧，必须能够匹配上 xxxxx 这部分的表达式。因为它只是在此作为这个缝隙上附加的条件，所以它并不影响后边的表达式去真正匹配这个缝隙之后的字符。这就类似 “\b”，本身不匹配任何字符。”\b” 只是将所在缝隙之前、之后的字符取来进行了一下判断，不会影响后边的表达式来真正的匹配。</p>
+<ul>
+<li>表达式 <code>/Windows (?=NT|XP)/</code> 在匹配 “Windows 98, Windows NT, Windows 2000” 时，将只匹配 “Windows NT” 中的 “Windows “，其他的 “Windows “ 字样则不被匹配。</li>
+<li>表达式 <code>/(\w)((?=\1\1\1)(\1))+/</code> 在匹配字符串 “aaa ffffff 999999999” 时，将可以匹配6个”f”的前4个，可以匹配9个”9”的前7个。这个表达式可以读解成：重复4次以上的字母数字，则匹配其剩下最后2位之前的部分。当然，这个表达式可以不这样写，在此的目的是作为演示之用。</li>
+</ul>
+<p>格式：”(?!xxxxx)”，所在缝隙的右侧，必须不能匹配 xxxxx 这部分表达式。</p>
+<ul>
+<li>表达式 <code>/((?!\bstop\b).)+/</code> 在匹配 “fdjka ljfdl stop fjdsla fdj” 时，将从头一直匹配到 “stop” 之前的位置，如果字符串中没有 “stop”，则匹配整个字符串。</li>
+<li>表达式 <code>/do(?!\w)/</code> 在匹配字符串 “done, do, dog” 时，只能匹配 “do”。在本条举例中，”do” 后边使用 “(?!\w)” 和使用 “\b” 效果是一样的。</li>
+</ul>
+<p><strong>反向预搜索：”(?&lt;=xxxxx)”，”(?&lt;!xxxxx)”</strong></p>
+<p>这两种格式的概念和正向预搜索是类似的，反向预搜索要求的条件是：所在缝隙的 “左侧”，两种格式分别要求必须能够匹配和必须不能够匹配指定表达式，而不是去判断右侧。与 “正向预搜索” 一样的是：它们都是对所在缝隙的一种附加条件，本身都不匹配任何字符。</p>
+<ul>
+<li>表达式 <code>/(?&lt;=\d{4})\d+(?=\d{4})/</code> 在匹配 “1234567890123456” 时，将匹配除了前4个数字和后4个数字之外的中间8个数字。 <strong>提醒一点，js不支持反向预搜索</strong></li>
+</ul>
+<h4 id="其他通用规则"><a href="#其他通用规则" class="headerlink" title="其他通用规则"></a>其他通用规则</h4><p>还有一些在各个正则表达式引擎之间比较通用的规则，在前面的讲解过程中没有提到。</p>
+<p><strong>表达式中，可以使用 “\xXX” 和 “\uXXXX” 表示一个字符 （“X”表示一个十六进制数）</strong></p>
+<ul>
+<li><strong>\xXX</strong> 编号在 0 ~ 255 范围的字符，比如：空格可以使用 “\x20” 表示</li>
+<li><strong>\uXXXX</strong> 任何字符都可以使用“\u”再加上其变好的4位十六进制数表示</li>
+</ul>
+<p>在表达式”\s”,”\d”,”\w”,”\b”表示特殊意义的同时，对应的大写字母表示相反的意义</p>
+<ul>
+<li><strong>\S</strong> 匹配所有非空白字符（”\s” 可匹配各个空白字符）</li>
+<li><strong>\D</strong> 匹配所有的非数字字符</li>
+<li><strong>\W</strong> 匹配所有的字母、数字、下划线以外的字符</li>
+<li><strong>\B</strong> 匹配非单词边界，即左右两边都是 “/w” 范围或者左右两边都不是 “/w” 范围时的字符缝隙</li>
+</ul>
+<p><strong>在表达式中有特殊意义，需要添加 “/“ 才能匹配该字符本身的字符汇总</strong></p>
+<ul>
+<li><strong>^</strong> 匹配输入字符串的开始位置。要匹配 “^” 字符本身，请使用 “/^”</li>
+<li><strong>$</strong> 匹配输入字符串的结尾位置。要匹配 “$” 字符本身，请使用 “/$”</li>
+<li><strong>( )</strong> 标记一个子表达式的开始和结束位置。要匹配小括号，请使用 “/(“ 和 “/)”</li>
+<li><strong>[ ]</strong> 用来自定义能够匹配 ‘多种字符’ 的表达式。要匹配中括号，请使用 “/[“ 和 “/]”</li>
+<li><strong>{ }</strong> 修饰匹配次数的符号。要匹配大括号，请使用 “/{“ 和 “/}”</li>
+<li><strong>.</strong> 匹配除了换行符（/n）以外的任意一个字符。要匹配小数点本身，请使用 “/.”</li>
+<li><strong>?</strong> 修饰匹配次数为 0 次或 1 次。要匹配 “?” 字符本身，请使用 “/?”</li>
+<li><strong>+</strong> 修饰匹配次数为至少 1 次。要匹配 “+” 字符本身，请使用 “/+”</li>
+<li><ul>
+<li>修饰匹配次数为 0 次或任意次。要匹配 “<em>“ 字符本身，请使用 “/</em>“</li>
+</ul>
+</li>
+<li><strong>|</strong> 左右两边表达式之间 “或” 关系。匹配 “|” 本身，请使用 “/|”</li>
+</ul>
+<p>括号 “( )” 内的子表达式，如果希望匹配结果不进行记录供以后使用，可以使用 “(?:xxxxx)” 格式</p>
+<p>举例：表达式 <code>./(?:(\w)\1)+/</code> 匹配 “a bbccdd efg” 时，结果是 “bbccdd”。括号 “(?:)” 范围的匹配结果不进行记录，因此 “(\w)” 使用 “\1” 来引用。</p>
+<p><em>*常用的表达式属性设置简介： </em>Ignorecase<em> , </em>SingleLine<em> , </em> Multiline<em> , </em>Global*</p>
+<ul>
+<li><strong>IgnoreCase</strong> 默认情况下，表达式中的字母是要区分大小写的。配置为 Ignorecase 可使匹配时不区分大小写。有的表达式引擎，把 “大小写” 概念延伸至 UNICODE 范围的大小写。</li>
+<li><strong>SingleLine</strong> 默认情况下，小数点 “.” 匹配除了换行符（/n）以外的字符。配置为 Singleline 可使小数点可匹配包括换行符在内的所有字符。</li>
+<li><strong>Multiline</strong> 默认情况下，表达式 “^” 和 “$” 只匹配字符串的开始 ① 和结尾 ④ 位置。如：<br>①xxxxxxxxx②/n③xxxxxxxxx④，配置为 Multiline 可以使 “^” 匹配 ① 外，还可以匹配换行符之后，下一行开始前 ③ 的位置，使 “$” 匹配 ④ 外，还可以匹配换行符之前，一行结束 ② 的位置。</li>
+<li><strong>Global</strong> 主要在将表达式用来替换时起作用，配置为 Global 表示替换所有的匹配。</li>
+</ul>
+<h4 id="其他提示"><a href="#其他提示" class="headerlink" title="其他提示"></a>其他提示</h4><ul>
+<li>如果要要求表达式所匹配的内容是整个字符串，而不是从字符串中找一部分，那么可以在表达式的首尾使用 “^” 和 “$”，比如：”^\d+$” 要求整个字符串只有数字。</li>
+<li>如果要求匹配的内容是一个完整的单词，而不会是单词的一部分，那么在表达式首尾使用 “\b”，比如：使用 “\b(if|while|else|void|int……)\b” 来匹配程序中的关键字。</li>
+<li>表达式不要匹配空字符串。否则会一直得到匹配成功，而结果什么都没有匹配到。比如：准备写一个匹配 “123”、”123.”、”123.5”、”.5” 这几种形式的表达式时，整数、小数点、小数数字都可以省略，但是不要将表达式写成：”\d<em>.?\d</em>“，因为如果什么都没有，这个表达式也可以匹配成功。更好的写法是：”\d+.?\d*|.\d+”。</li>
+<li>能匹配空字符串的子匹配不要循环无限次。如果括号内的子表达式中的每一部分都可以匹配 0 次，而这个括号整体又可以匹配无限次，那么情况可能比上一条所说的更严重，匹配过程中可能死循环。虽然现在有些正则表达式引擎已经通过办法避免了这种情况出现死循环了，比如 .NET 的正则表达式，但是我们仍然应该尽量避免出现这种情况。如果我们在写表达式时遇到了死循环，也可以从这一点入手，查找一下是否是本条所说的原因。</li>
+</ul>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/04/23/css3中position的一些新的理解及div的默认宽度问题/" style="float: left;">
+        ← css3中position的一些新的理解及div的默认宽度问题
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/05/23/尚妆周年庆化妆游戏开发文档/">
+        尚妆周年庆化妆游戏开发文档 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 怀朔. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/zhangzhaoxu" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

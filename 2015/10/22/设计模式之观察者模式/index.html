@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>设计模式之观察者模式 | 怀朔</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="怀朔">
+    <meta name="author" content="怀朔">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="怀朔" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">怀朔</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.jpg" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link forWhite">怀朔</a></li>
+                            <li class="nolink"><span class="forWhite">Always </span><span class="forWhite">Creative.</span></li>
+                            
+                            <li><a href="https://github.com/zhangzhaoxu" class="forWhite" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-10-22T08:09:03.000Z" itemprop="datePublished">
+          2015-10-22
+      </time>
+    
+    
+    | 
+    <a href='/tags/js基础/'>js基础</a>
+    
+    
+</span>
+                <h1>设计模式之观察者模式</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="设计模式之观察者模式"><a href="#设计模式之观察者模式" class="headerlink" title="设计模式之观察者模式"></a>设计模式之观察者模式</h1><p>今天看了汤姆大叔的深入理解Javascript之观察者模式，<br>感觉眼前一亮，准备把这个系列全部看完，先把今天看的观察者模式记录下来：</p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><hr>
+<p>观察者模式又叫发布订阅模式(publish/Subscribe)，它定义了一种一对多的关系，让多个观察者对象同时监听一个主体对象，这个主题对象的状态发生变化是就会通知所有的观察者对象，使得它们能够自动更新自己。</p>
+<h3 id="使用观察者模式的好处"><a href="#使用观察者模式的好处" class="headerlink" title="使用观察者模式的好处"></a>使用观察者模式的好处</h3><hr>
+<ol>
+<li>支持简单的广播通信，自动通知所有已经订阅过的对象。</li>
+<li>页面载入后目标对象很容易与观察者存在一种动态关联，增强了灵活性。</li>
+<li>目标对象与观察者之间的抽象耦合关系能够单独扩展及重用。</li>
+</ol>
+<a id="more"></a>
+<h3 id="版本一"><a href="#版本一" class="headerlink" title="版本一"></a>版本一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">var pubsub = &#123;&#125;;</div><div class="line">(function (q) &#123;</div><div class="line"></div><div class="line">    var topics = &#123;&#125;, // 回调函数存放的数组</div><div class="line">        subUid = -1;</div><div class="line">    // 发布方法</div><div class="line">    q.publish = function (topic, args) &#123;</div><div class="line"></div><div class="line">        if (!topics[topic]) &#123;  //如果没有回调函数订阅过该事件，返回false</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        var subscribers = topics[topic],</div><div class="line">            len = subscribers ? subscribers.length : 0; //有多少个回调函数订阅了同一发布事件</div><div class="line"></div><div class="line">        while (len--) &#123;</div><div class="line">            subscribers[len].func(topic, args);   //执行所有订阅过该事件的回调函数</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return true;</div><div class="line"></div><div class="line">    &#125;;</div><div class="line">//订阅方法</div><div class="line">    q.subscribe = function (topic, func) &#123;</div><div class="line"></div><div class="line">        if (!topics[topic]) &#123;    //topics[topic] topic为订阅事件的名称，topics[topic]存储了所有订阅该事件的回调函数</div><div class="line">            topics[topic] = [];</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        var token = (++subUid).toString();</div><div class="line">        topics[topic].push(&#123;</div><div class="line">            token: token,</div><div class="line">            func: func</div><div class="line">        &#125;);</div><div class="line">        return token;</div><div class="line">    &#125;;</div><div class="line">    //退订方法</div><div class="line">    q.unsubscribe = function (token) &#123;</div><div class="line">        for (var m in topics) &#123;</div><div class="line">            if (topics[m]) &#123;</div><div class="line">                for (var i = 0, j = topics[m].length; i &lt; j; i++) &#123;</div><div class="line">                    if (topics[m][i].token === token) &#123;</div><div class="line">                        topics[m].splice(i, 1);</div><div class="line">                        return token;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;;</div><div class="line">&#125; (pubsub));</div></pre></td></tr></table></figure>
+<p>使用方式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//来，订阅一个</div><div class="line">pubsub.subscribe(&apos;example1&apos;, function (topics, data) &#123;</div><div class="line">    console.log(topics + &quot;: &quot; + data);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">//发布通知</div><div class="line">pubsub.publish(&apos;example1&apos;, &apos;hello world!&apos;);</div><div class="line">pubsub.publish(&apos;example1&apos;, [&apos;test&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;]);</div><div class="line">pubsub.publish(&apos;example1&apos;, [&#123; &apos;color&apos;: &apos;blue&apos; &#125;, &#123; &apos;text&apos;: &apos;hello&apos;&#125;]);</div></pre></td></tr></table></figure>
+<p>怎么样？用起来是不是很爽？但是这种方式有个问题，就是没办法退订订阅，要退订的话必须指定退订的名称，所以我们再来一个版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//将订阅赋值给一个变量，以便退订</div><div class="line">var testSubscription = pubsub.subscribe(&apos;example1&apos;, function (topics, data) &#123;</div><div class="line">    console.log(topics + &quot;: &quot; + data);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">//发布通知</div><div class="line">pubsub.publish(&apos;example1&apos;, &apos;hello world!&apos;);</div><div class="line">pubsub.publish(&apos;example1&apos;, [&apos;test&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;]);</div><div class="line">pubsub.publish(&apos;example1&apos;, [&#123; &apos;color&apos;: &apos;blue&apos; &#125;, &#123; &apos;text&apos;: &apos;hello&apos;&#125;]);</div><div class="line"></div><div class="line">//退订</div><div class="line">setTimeout(function () &#123;</div><div class="line">    pubsub.unsubscribe(testSubscription);</div><div class="line">&#125;, 0);</div><div class="line"></div><div class="line">//再发布一次，验证一下是否还能够输出信息</div><div class="line">pubsub.publish(&apos;example1&apos;, &apos;hello again! (this will fail)&apos;);</div></pre></td></tr></table></figure>
+<h3 id="版本二"><a href="#版本二" class="headerlink" title="版本二"></a>版本二</h3><hr>
+<p>我们也可以利用原型的特性实现一个观察者模式，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">function Observer()&#123;</div><div class="line">    this.fns = [];   //存放回调函数</div><div class="line">&#125;</div><div class="line"></div><div class="line">Observer.prototype = &#123;</div><div class="line">    subscribe: function (fn) &#123;   //将订阅该Observer的回调函数压入this.fns</div><div class="line">        this.fns.push(fn);</div><div class="line">    &#125;,</div><div class="line">    unsubscribe: function (fn) &#123;       //将该回调函数从this.fns中删除，解绑Observer</div><div class="line">        this.fns = this.fns.filter(function (el) &#123;</div><div class="line">            if (el !== fn) &#123;</div><div class="line">                return el;</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &#125;,</div><div class="line">    update: function (o, thisObj) &#123;      //Observer更新事件，将事件推送到各个回调函数，执行回调函数</div><div class="line">        var scope = thisObj || window;</div><div class="line">        this.fns.forEach(function (el) &#123;</div><div class="line">            el.call(scope,o);</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var o = new Observer();</div><div class="line">var f1 = function (data) &#123;</div><div class="line">    console.log(&apos;Robbin: &apos; + data + &apos;, 赶紧干活了！&apos;);</div><div class="line">&#125;;</div><div class="line">var f2 = function (data) &#123;</div><div class="line">    console.log(&apos;Randall: &apos; + data + &apos;, 找他加点工资去！&apos;);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">o.subscribe(f1);</div><div class="line">o.subscribe(f2);</div><div class="line">o.update(&quot;Tom回来了&quot;);</div><div class="line">o.unsubscribe(f1);</div><div class="line">o.update(&quot;Tom回来了&quot;);</div></pre></td></tr></table></figure>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/09/30/css盒模型全面整理/" style="float: left;">
+        ← css盒模型全面整理
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/11/13/js-eval/">
+        js_eval() →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 怀朔. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/zhangzhaoxu" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

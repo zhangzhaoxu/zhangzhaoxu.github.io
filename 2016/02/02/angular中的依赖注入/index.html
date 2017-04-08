@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>angular中的依赖注入 | 怀朔</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="怀朔">
+    <meta name="author" content="怀朔">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="怀朔" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">怀朔</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.jpg" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link forWhite">怀朔</a></li>
+                            <li class="nolink"><span class="forWhite">Always </span><span class="forWhite">Creative.</span></li>
+                            
+                            <li><a href="https://github.com/zhangzhaoxu" class="forWhite" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-02-02T08:11:26.000Z" itemprop="datePublished">
+          2016-02-02
+      </time>
+    
+    
+    | 
+    <a href='/tags/angular学习/'>angular学习</a>
+    
+    
+</span>
+                <h1>angular中的依赖注入</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="Angularjs中的依赖注入"><a href="#Angularjs中的依赖注入" class="headerlink" title="Angularjs中的依赖注入"></a>Angularjs中的依赖注入</h1><hr>
+<p>AngularJS中的依赖注入非常有用，是能够对组件进行测试的关键</p>
+<h3 id="Provider服务-（-provider"><a href="#Provider服务-（-provider" class="headerlink" title="Provider服务 （$provider)"></a>Provider服务 （$provider)</h3><hr>
+<p>你可以使用provider服务负责告诉Angular如何创造一个可注入的东西：即服务(service)。服务会被叫做provider的东西来定义，你可以使用provider来创建一个provider。你需要使用provider中的provider方法来定义一个provider，同时你也可以通过要求provider中的provider方法来定义一个provider，同时你也可以通过要求provider服务被注入到config函数中来获得$provider服务。下面是一个例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">app.config(function($provider)&#123;</div><div class="line">    $provider.provider(&apos;greeting&apos;,function()&#123;</div><div class="line">        this.$get = function()&#123;</div><div class="line">            return function(name)&#123;</div><div class="line">                alert(&quot;Hello, &quot;+name);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>在上面的例子中我们为一个服务定义了一个叫做greeting的新provider；我么可以把一个叫做greeting的变量注入到任何可注入的函数中（例如控制器，在后面会讲到）然后Angular就会调用这个provider的$get函数来返回这个服务的一个实例。在上面的例子中，被注入的是一个函数，它接受一个叫做name的参数并且根据这个参数alert一条信息。我们可以像下面这样使用它：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.controller(&apos;MyCtrl&apos;,[&apos;$scope&apos;,&apos;greeting&apos;,function($scope,greeting)&#123;</div><div class="line">    $scope.onClick = function()&#123;</div><div class="line">        greeting(&apos;Test&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<p>现在有趣的事情来了。factory，service以及value全部都是用来定义一个providr的简写，它们提供了一种方式来定义一个provider而无需输入所有的复杂的代码。例如，你可以用下面的代码定义一个和前面完全相同的provider：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.config(function($provider)&#123;</div><div class="line">    $provider.factory(&apos;greeting&apos;,function(name)&#123;</div><div class="line">        return function(name)&#123;</div><div class="line">            alert(&quot;Hello, &quot;+name);</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这非常的重要，所以一定要记住：在幕后，AngularJS实际上是在调用前面出现的代码（就是provide.provider的版本）。从字面上来说，这两种方法基本上没有差别。value方法也一样–如果我们需要从get函数（也就是我们的factory函数）返回的值永远相同的话，我们可以使用value方法来编写更少的代码。例如如果我们的greeting服务总是返回相同的函数，我们可以使用value来进行定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.config(function($provider)&#123;</div><div class="line">    $provider.value(&apos;greeting&apos;,function(name)&#123;</div><div class="line">        alert(&quot;Hello, &quot;+name);</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在我们可能发现了非常烦人的一点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.config(function($provider)&#123;……&#125;);</div></pre></td></tr></table></figure>
+<p>由于定义一个新的provider是很常用的，AngularJS在模块对象上直接暴露了provider方法，以此来简化代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;myApp&apos;,[]);</div><div class="line"></div><div class="line">app.provider(&quot;greeting&quot;,...);</div><div class="line">app.factory(&quot;greeting&quot;,...);</div><div class="line">app.value(&quot;greeting&quot;,...);</div></pre></td></tr></table></figure>
+<p>上面的写法和之前麻烦的app.config(…)方法完全相同，下面所有的代码做的都是相同的事：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">myMod.provider(&apos;greeting&apos;, function() &#123;</div><div class="line">  this.$get = function() &#123;</div><div class="line">return function(name) &#123;</div><div class="line">  alert(&quot;Hello, &quot; + name);</div><div class="line">&#125;;</div><div class="line">  &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">myMod.factory(&apos;greeting&apos;, function() &#123;</div><div class="line">  return function(name) &#123;</div><div class="line">alert(&quot;Hello, &quot; + name);</div><div class="line">  &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">myMod.value(&apos;greeting&apos;, function(name) &#123;</div><div class="line">  alert(&quot;Hello, &quot; + name);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="注入器-inject"><a href="#注入器-inject" class="headerlink" title="注入器($inject)"></a>注入器($inject)</h3><hr>
+<p>注入器负责从我们通过provide创建的服务中创建注入的实例。只要你编写了一个带有可注入性的参数，你都能看到注入器是如何运行的。每一个AngularJS应用都有唯一一个provide创建的服务中创建注入的实例。只要你编写了一个带有可注入性的参数，你都能看到注入器是如何运行的。每一个AngularJS应用都有唯一一个injector，当应用启动的时候它被创造出来，你可以通过将injector注入到任何可注入函数中来得到它（injector注入到任何可注入函数中来得到它（injector知道如何注入它自己！）。</p>
+<p>一旦你拥有了$injector，你可以动过调用get函数来获得任何一个已经被定义过的服务的实例。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var greeting = $injector.get(&apos;greeting&apos;);</div><div class="line">greeting(&apos;Ford Prefect&apos;);</div></pre></td></tr></table></figure>
+<p>注入器同样也负责将服务注入到函数中；例如，你可以魔法般的将服务注入到任何函数中，只要你使用了注入器的invoke方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var myFunction = function(greeting) &#123;</div><div class="line">  greeting(&apos;Ford Prefect&apos;);</div><div class="line">&#125;;</div><div class="line">$injector.invoke(myFunction);</div></pre></td></tr></table></figure>
+<p>如果注入器只是创建一个服务的实例一次的话，那么它也没什么了不起的。它的厉害之处在于，他能够通过服务名称缓存从一个provider中返回的任何东西，当你下一次再使用这个服务时，你将会得到同一个对象</p>
+<p>因此，你可以通过调用$injector.invike将服务注入到任何函数中也是合情合理的了。包括：</p>
+<ul>
+<li>指令定义函数 <code>控制器定义函数</code></li>
+<li>过滤器定义函数 <code>provider中的$get方法(也就是factory函数)</code></li>
+</ul>
+<p>此外，由于constant和value总是返回一个静态值，它们不会被通过注入器调用，因此你不能在其中注入任何东西</p>
+<h4 id="配置provider"><a href="#配置provider" class="headerlink" title="配置provider"></a>配置provider</h4><p>你可能会感到困惑：既然factorry和value能够节省那么多的代码，为什么还有人要使用provider。答案是provider允许我们进行一些配置。在前面我们已经提到过当你通过provider（或者其他简写方法）创建一个服务时，你实际上创建了一个新的provider，它将定义你的服务如何被创建。我们没有提到的是，这些provider可以被注入到config函数中，你可以和它们进行一些交互。</p>
+<p>首先，AngularJS分两个阶段运行你的应用 – config阶段和run阶段。config阶段是你设置任何的provider的阶段。它也是你设置任何的指令，控制器，过滤器以及其它东西的阶段。在run阶段，AngularJS会编译你的DOM并启动你的应用。</p>
+<p>你可以在myMod.config和myMod.run中添加任何代码 – 这两个函数分别在两个阶段运行。正如我们看到的，这些函数都是可以被注入的 – 我们在第一个例子中注入了内建的provide函数。然而，值得注意的是在config阶段，只有provider能被注入（只有两个例外是provide函数。然而，值得注意的是在config阶段，只有provider能被注入（只有两个例外是provide和$injector)。</p>
+<p>下面是错误的写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">myMod.config(function(greeting) &#123;</div><div class="line">  //不会运行 -- greeting是一个服务的实例</div><div class="line">  //只有服务的provider能被注入到config中</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>有一个例外：constant，由于它们不能被改变，因此它不能被注入到config中（这就是它和value之间的不同之处）。它们只能通过名字被获取。</p>
+<p>无论何时你为一个服务定义了一个provider，这个provider的名字都是serviceProvider。在这里service是服务的名字。现在我们可以使用provider的力量来做一些更复杂的事情了！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">myMod.provider(&apos;greeting&apos;, function() &#123;</div><div class="line">  var text = &apos;Hello, &apos;;</div><div class="line"></div><div class="line">  this.setText = function(value) &#123;</div><div class="line">     text = value;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  this.$get = function() &#123;</div><div class="line">     return function(name) &#123;</div><div class="line">         alert(text + name);</div><div class="line">     &#125;;</div><div class="line">  &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">myMod.config(function(greetingProvider) &#123;</div><div class="line">  greetingProvider.setText(&quot;Howdy there, &quot;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">myMod.run(function(greeting) &#123;</div><div class="line">  greeting(&apos;Ford Prefect&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>现在我们在provider中拥有了一个叫做setText的函数，我们可以使用它来自定义我们alert的内容；我们可以再config中访问这个provider，调用setText方法并自定义我们的service。当我们最终运行我们的应用时，我们可以获取greeting服务，然后你会看到我们自定义的行为起作用了。</p>
+<h3 id="控制器-controller"><a href="#控制器-controller" class="headerlink" title="控制器($controller)"></a>控制器($controller)</h3><hr>
+<p>控制器函数是可以被注入的，但是控制器本身是不能被注入到任何东西里面去的。这是因为控制器不是通过provider创建的。然而，有一个内建的AngularJS服务叫做1$controller，它负责设置你的控制器。当你调用myMod.controller(…)时，你实际上是访问了这个服务的provider，就像上面的例子一样。</p>
+<p>例如，当你像下面一样定义了一个控制器时：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myMod.controller(&apos;MainController&apos;, function($scope) &#123;</div><div class="line">  // ...</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>你实际是在做下面这件事情</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">myMod.config(function($controllerProvider) &#123;</div><div class="line">  $controllerProvider.register(&apos;MainController&apos;, function($scope) &#123;</div><div class="line">// ...</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>当Angular需要创建一个你的控制的实例时，它会使用controller服务（它反过来会使用controller服务（它反过来会使用injector来调用你的控制器以便它能够被注入依赖项）。</p>
+<h3 id="过滤器和指令"><a href="#过滤器和指令" class="headerlink" title="过滤器和指令"></a>过滤器和指令</h3><p><code>filter</code>和<code>directive</code>和<code>controller</code>的运行方式相同；<code>filter</code>会使用一个叫做<code>filter</code>的服务以及它的<code>providerfilter</code>的服务以及它的<code>providerfilterProvider</code>，而<code>directive</code>使用一个叫做<code>compile</code>的服务以及它的<code>providercompile</code>的服务以及它的<code>providercompileProvider</code>。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><hr>
+<p>总结一下，任何能够被$injector.invoke调用的函数都是能被注入的。包括，但不限于下面的这些：</p>
+<ul>
+<li>控制器 指令</li>
+<li>factory 过滤器</li>
+<li>provider中的$get函数 provider函数</li>
+<li>服务</li>
+</ul>
+<p>provider创建的新服务都可以用来注入。包括：</p>
+<ul>
+<li>constant</li>
+<li>factory provider</li>
+<li>service value</li>
+</ul>
+<p>另外，内建的服务controller和controller和filter也可以被注入，同时你也可以使用这些服务来获得新的过滤器和控制器。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/11/13/js-eval/" style="float: left;">
+        ← js_eval()
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/02/08/BFC复习/">
+        BFC →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 怀朔. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/zhangzhaoxu" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

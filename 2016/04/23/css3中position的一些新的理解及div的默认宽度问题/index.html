@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>css3中position的一些新的理解及div的默认宽度问题 | 怀朔</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="怀朔">
+    <meta name="author" content="怀朔">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="怀朔" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">怀朔</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.jpg" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link forWhite">怀朔</a></li>
+                            <li class="nolink"><span class="forWhite">Always </span><span class="forWhite">Creative.</span></li>
+                            
+                            <li><a href="https://github.com/zhangzhaoxu" class="forWhite" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-04-23T07:58:50.000Z" itemprop="datePublished">
+          2016-04-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/css整理/'>css整理</a>
+    
+    
+</span>
+                <h1>css3中position的一些新的理解及div的默认宽度问题</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="css3中position的一些新的理解及div的默认宽度问题"><a href="#css3中position的一些新的理解及div的默认宽度问题" class="headerlink" title="css3中position的一些新的理解及div的默认宽度问题"></a>css3中position的一些新的理解及div的默认宽度问题</h1><p>对css3中position的理解，以及div的默认宽度问题<br>每一个web前端开发者对position都不陌生，最熟悉的是其两个值：</p>
+<ul>
+<li><p><code>absolute</code>(绝对定位)</p>
+</li>
+<li><p><code>relative</code>(相对定位)</p>
+</li>
+</ul>
+<p>在以前一直认为absolute定义过样式的DOM是脱离文档流的，最近才发现并不是这样的：</p>
+<a id="more"></a>
+<p>以下是新的总结：<br>绝对定位：</p>
+<p>1.当某元素使用绝对定位并且未设置top，left的值时，实际上并未真正脱离文档流</p>
+<p>2.使用绝对定位并且设置了top，left时，这才脱离了文档流，,如果父元素并没有设置<code>position:relative</code>,则以最外层的body元素作为父容器.设置了则以此为父容器</p>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>当元素使用相对定位时，无论设不设置top，left的值，都不会脱离文档流。<br>一个小例子，以及由此延伸出的一些自己的小发现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head lang=&quot;en&quot;&gt;</div><div class="line">   	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">   	&lt;title&gt;&lt;/title&gt;</div><div class="line">   	&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">      	 html, body &#123;</div><div class="line">         	  margin: 0;</div><div class="line">        	   padding: 0;</div><div class="line">       	&#125;</div><div class="line"></div><div class="line">      	 .top &#123;</div><div class="line">           background-color: red;</div><div class="line">           margin-bottom: 5px;</div><div class="line">           height: 50px;</div><div class="line">       	&#125;</div><div class="line"></div><div class="line">       	.sidebar&#123;</div><div class="line">           position: absolute;</div><div class="line">           background-color: yellow;</div><div class="line">       	    height: 50px;</div><div class="line">      	 &#125;</div><div class="line"></div><div class="line">   	&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;top&quot;&gt;A(固定高度，宽度自适应)&lt;/div&gt;</div><div class="line">&lt;div class=&quot;sidebar&quot;&gt;B(高度任意，宽度为自适应)&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>看下面这张图片：</p>
+<p><img src="data:image/jpeg;base64,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CgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKAP/9k=" alt="image"></p>
+<p>在B里设置了绝对定位，但没有设定top，left,所以仍在文档流里，所以自动排到A下面。但如果设置top=1，则黄色div会距离body顶部1px，而不是红色div。大家可以自己试下。</p>
+<p>还有，有没有注意到A的宽度默认全屏，而B仅仅是字的宽度。这就是我的一点小发现吧，以前没有注意过，当div的定位模式是相对定位时，默认宽度是父元素的宽度，而绝对定位的div的宽度为自适应的。大家也可以自己试一下。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/03/12/移动端适配方法/" style="float: left;">
+        ← 移动端适配方法
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/04/23/正则表达式总结/">
+        正则表达式总结 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 怀朔. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/zhangzhaoxu" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

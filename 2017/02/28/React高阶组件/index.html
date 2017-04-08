@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>React高阶组件 | 怀朔</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="怀朔">
+    <meta name="author" content="怀朔">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="怀朔" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">怀朔</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.jpg" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link forWhite">怀朔</a></li>
+                            <li class="nolink"><span class="forWhite">Always </span><span class="forWhite">Creative.</span></li>
+                            
+                            <li><a href="https://github.com/zhangzhaoxu" class="forWhite" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-02-28T13:22:53.000Z" itemprop="datePublished">
+          2017-02-28
+      </time>
+    
+</span>
+                <h1>React高阶组件</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="React-组件间抽象"><a href="#React-组件间抽象" class="headerlink" title="React 组件间抽象"></a>React 组件间抽象</h1><p><em>使用mixin</em><br>mixin的特性一直存在于各种面向对象语言中，mixin是为了实现一种类似于多重继承的效果。<br>先来体验一下用JS封装个mixin方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">const mixin = function (obj, mixins) &#123;</div><div class="line">    const newObj = obj;</div><div class="line">    newObj.prototype = Object.create(obj.prototype);</div><div class="line"></div><div class="line">    for(let prop in mixins) &#123;</div><div class="line">        if(mixins.hasOwnProperty(prop)) &#123;</div><div class="line">            newObj.prototype[prop] = mixins[prop];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return newObj;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">const BigMixin = &#123;</div><div class="line">    fly: () =&gt; &#123;</div><div class="line">        console.log(I can fly);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">const Big = function () &#123;</div><div class="line">    console.log(new big);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">const FlyBig = mixin(Big, BigMixin);</div><div class="line"></div><div class="line">const flybig = new FlyBig();</div><div class="line"></div><div class="line">flybig.fly();</div></pre></td></tr></table></figure></p>
+<p>对于广义的mixin方法，就是用赋值的方式将mixin对象里面的方法都挂载到对象上，来实现对对象的混入。有些类似于es6里的<code>Object.assign()</code>方法</p>
+<p><em>在React中使用mixin</em><br>React在使用<code>createClasss</code>构建组件时提供了<code>mixin</code>属性，比如官方封装的<code>PureRenderMixin</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">import React from react;</div><div class="line">import PureRenderMixin from react-addons-pure-mixin;</div><div class="line"></div><div class="line">React.createClass(&#123;</div><div class="line">    mixins: [PureRenderMixin],</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        return &lt;div&gt;foo&lt;/div&gt;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>在<code>createClass</code>对象参数中传入数组<code>mixins</code>，里面封装了我们所需要的模块。<code>mixin</code>数组里也可以增加多个<code>mixin</code>。React中不予许有重名的方法，它不会覆盖，而是会报错。<br>使用<code>createClass</code>实现的mixin为组件做了两件事</p>
+<ul>
+<li>共享工具方法</li>
+<li>生命周期继承，<code>props</code>与<code>state</code>合并。这是<code>mixins</code>特别重要的功能，它能够合并生命周期方法。如果有很多<code>mixin</code>来定义<code>componentDidMount</code>这个周期，那么React会智能的合并起来执行。同样，<code>mixin</code>也可以作用在<code>getInitialstate</code>的结果上，作<code>state</code>的合并，而<code>props</code>也是这样合并的。</li>
+</ul>
+<p><em>ES6 Classes与decorator</em><br>遗憾的是，使用ES6 classes形式构建组件时，它并不支持<code>mixin</code>。React并没有给我提供解决方案。我们可以使用ES7的<code>decorator</code>，来实现上述的<code>mixins</code>。关于<code>ES7 decorator</code>的原理在另一篇文章中总结。<br><code>core-decorators</code>为开发者提供了一些实用的<code>decorator</code>，其中就有我们想要的<code>@mixin</code>，其核心实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">import &#123; getOwnPropertyDescriptors &#125; from ./private/utils;</div><div class="line"></div><div class="line">const &#123; defineProperty &#125; = Object;</div><div class="line"></div><div class="line">function handleClass(target, mixins) &#123;</div><div class="line">    if(!mixins.length) &#123;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    for(let i = 0, l = mixins.length; i &lt; l; i++) &#123;</div><div class="line">        // 获取mixins的attributes对象</div><div class="line">        const descs = getOwnPropertyDescriptors(mixins[i]);</div><div class="line"></div><div class="line">        // 批量定义 mixins 的 attributes 对象</div><div class="line">        for (const key in descs) &#123;</div><div class="line">            if (!(key in target.prototype)) &#123;</div><div class="line">                defineProperty(target.prototype, key, descs[key]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default function mixin(...mixins) &#123;</div><div class="line">    if (typeof mixins[0] === function) &#123;</div><div class="line">        return handleClass(mixins[0], []);</div><div class="line">    &#125;</div><div class="line">    else &#123;</div><div class="line">        return target =&gt; &#123;</div><div class="line">            return handleClass(target, mixins);</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>它将每一个<code>mixin</code>对象的方法都叠加到了<code>target</code>对象的原型上以达到<code>mixin</code>的目的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from React;</div><div class="line">import &#123; mixin &#125; from core-decorator;</div><div class="line"></div><div class="line">const PureRender = &#123;</div><div class="line">    shouldComponentUpdate() &#123;&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">const Theme = &#123;</div><div class="line">    setTheme() &#123;&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">@mixin(PureRender, Theme)</div><div class="line">class MyComponent extends Component &#123;</div><div class="line">    render() &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>mixin的问题</em><br>React社区从<code>0.14</code>版本开始渐渐开始剥离<code>mixin</code></p>
+<ul>
+<li>破坏了组件原有的封装性</li>
+<li>命名冲突</li>
+<li>增加复杂性</li>
+</ul>
+<p><em>高阶组件</em><br><code>高阶组件</code>类似于<code>高阶函数</code>,它接受React组件作为输入，输出一个新的<code>React</code>组件，通俗的说法就是，当React被包裹的时，高阶组件会返回一个增强的React组件。<br>实现高阶组件的方法有两种：</p>
+<ul>
+<li>属性代理(props proxy)。高阶组件通过被包裹的React组件来操作props。</li>
+<li>反向继承(inhertance inversion)。高阶组件继承于被包裹的React组件。</li>
+</ul>
+<p><em>属性代理</em><br>是常见的高阶组件的实现方法。一个简单的例子，我们向被包裹的组件中传入了新的Props。就是通过高阶组件来传递props，想使用MyContainer这个组件就变得非常容易<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const MyContainer = (WrappedComponent) =&gt;</div><div class="line">    class extends Component &#123;</div><div class="line">        render() &#123;</div><div class="line">            return &lt;WrappedComponent &#123;...this.props&#125; /&gt;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">export default Mycontainer(MyComponent);</div></pre></td></tr></table></figure></p>
+<p>当然，我们也可以用decorator来转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@MyContainer</div><div class="line">class MyComponent extends Component &#123;</div><div class="line">    render() &#123;&#125;</div><div class="line">&#125;</div><div class="line">export default MyComponent;</div></pre></td></tr></table></figure>
+<h3 id="使用其他元素包裹-WrappedComponent"><a href="#使用其他元素包裹-WrappedComponent" class="headerlink" title="使用其他元素包裹 WrappedComponent"></a>使用其他元素包裹 WrappedComponent</h3><p>我们还可以使用其他元素来包裹WrappedComponent，这既可以是为了加样式，也可是为了布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">const MyContainer = (WrappedComponent) =&gt;</div><div class="line">    class extends Component &#123;</div><div class="line">        render() &#123;</div><div class="line">            return (</div><div class="line">                &lt;div style=&#123;&#123;display: block&#125;&#125;&gt;</div><div class="line">                    &lt;WrappedComponent &#123;...this.props&#125; /&gt;</div><div class="line">                &lt;/div&gt;</div><div class="line">            )</div><div class="line">        &#125;</div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+<p>简单来说，高阶组件符合函数式编程思想。对于原组件来说，并不会感知到高阶组件的存在，只需要把功能套在它之上就可以了，从而避免了使用<code>mixin</code>时产生的副作用</p>
+<p><em>反向继承</em><br>来一个小例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const MyContainer = (WrappedComponent) =&gt;</div><div class="line">    class extends WrappedComponent &#123;</div><div class="line">        render() &#123;</div><div class="line">            return super.render()</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>正如所见，高阶组件返回的组件继承与WrappedComponent。因为被动的继承了WrappedComponent，所有的调用都会反向。</p>
+<h4 id="渲染劫持"><a href="#渲染劫持" class="headerlink" title="渲染劫持"></a>渲染劫持</h4><p>渲染劫持指的就是高阶组件可以控制WrappedComponent的渲染过程，并渲染各种各样的结果。我们可以再这个过程中在任何React元素输出的结果中读取、增加、修改、删除props，或读取或修改React元素树，或条件显示元素树，又或时用样式控制包裹元素树<br>接下来通过几个例子说明</p>
+<ul>
+<li><p>条件渲染</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">const MyContainer = (WrappedComponent) =&gt;</div><div class="line">    class extends WrappedComponent &#123;</div><div class="line">        render() &#123;</div><div class="line">            if (this.props.loggedIn) &#123;</div><div class="line">                return super.render();</div><div class="line">            &#125;</div><div class="line">            else &#123;</div><div class="line">                return null;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>对render的输出结果进行修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">const MyContainer = (WrappedComponent) =&gt;</div><div class="line">    class extends WrappedComponent &#123;</div><div class="line">        render() &#123;</div><div class="line">            const elementsTree = super.render();</div><div class="line">            let newProps = &#123;&#125;;</div><div class="line">            if(elementsTree &amp;&amp; elementsTree.type === input) &#123;</div><div class="line">                newProps = &#123;value : may be the force with you&#125;;</div><div class="line">            &#125;</div><div class="line">            const props = Object.assign(&#123;&#125;, elementsTree.props, newProps);</div><div class="line">            const newElement = React.cloneElement(elementsTree, props, elementsTree.props.children);</div><div class="line">            return newElement;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>控制state</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">const MyContainer = (WrappedComponent) =&gt;</div><div class="line">    class extends WrappedComponent &#123;</div><div class="line">        render() &#123;</div><div class="line">            return (</div><div class="line">                &lt;div&gt;</div><div class="line">                    &lt;p&gt;&#123;JSON.stringify(this.props, null, 2)&#125;&lt;/p&gt;</div><div class="line">                    &#123;super.render()&#125;</div><div class="line">                &lt;/div&gt;</div><div class="line">            )</div><div class="line">        &#125;</div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="组件命名"><a href="#组件命名" class="headerlink" title="组件命名"></a>组件命名</h3><p>当包裹一个高阶组件时，我们失去了原始的WrappedComponent的displayName。<br>我们可以借用react-redux库中的实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function getDisplayName(WrappedComponent) &#123;</div><div class="line">    return WrappedComponent.displayName ||</div><div class="line">            WrappedComponent.name ||</div><div class="line">            Component</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="组件参数"><a href="#组件参数" class="headerlink" title="组件参数"></a>组件参数</h3><p>有时我们调用高阶组件需要传入一些参数，我们可以简单的通过工厂函数来实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function HOCFactoryFactory(...params) &#123;</div><div class="line">    return function HOCFactory(WrappedComponent) &#123;</div><div class="line">        return class HOC extends Component &#123;</div><div class="line">            render() &#123;</div><div class="line">                return &lt;WrappedComponent &#123;...this.props&#125; /&gt;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/09/26/css3d-Demo/" style="float: left;">
+        ← css3d_Demo
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/03/08/react通信技巧/">
+        react通信技巧 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 怀朔. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/zhangzhaoxu" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>移动端h5页面rem缩放方案flexible.js方案的思路 | 怀朔</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="怀朔">
+    <meta name="author" content="怀朔">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="怀朔" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">怀朔</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.jpg" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link forWhite">怀朔</a></li>
+                            <li class="nolink"><span class="forWhite">Always </span><span class="forWhite">Creative.</span></li>
+                            
+                            <li><a href="https://github.com/zhangzhaoxu" class="forWhite" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-06-17T08:17:02.000Z" itemprop="datePublished">
+          2016-06-17
+      </time>
+    
+    
+    | 
+    <a href='/tags/移动开发/'>移动开发</a>
+    
+    
+</span>
+                <h1>移动端h5页面rem缩放方案flexible.js方案的思路</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="移动端H5页面rem缩放方案flexible-js兼容375px方案的思路"><a href="#移动端H5页面rem缩放方案flexible-js兼容375px方案的思路" class="headerlink" title="移动端H5页面rem缩放方案flexible.js兼容375px方案的思路"></a>移动端H5页面rem缩放方案flexible.js兼容375px方案的思路</h1><p>参考：</p>
+<p><a href="http://www.html-js.com/article/Mobile-terminal-H5-mobile-terminal-HD-multi-screen-adaptation-scheme%203041" target="_blank" rel="external">移动端高清、多屏适配方案</a> </p>
+<p><a href="http://lvdada.org/2016/01/28/viewport-and-flexibleJs/" target="_blank" rel="external">viewport-and-flexible.js</a></p>
+<p><a href="https://github.com/amfe/lib-flexible/blob/master/src/flexible.js" target="_blank" rel="external">flexible.js github</a></p>
+<blockquote>
+<p>一个新的项目复用了一些老页面，老页面是使用375px方案进行移动端适配的，meta[viewport]使用的是<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=375, user-scalabe=no&quot;&gt;</code>，而新页面使用的是flexible.js伸缩方案，动态生成meta[viewport]<code>&lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=[num], user-scalabe=no&quot;&gt;</code><br>如何在老页面使用px布局的前提下，新页面使用rem布局，组件也使用rem布局，并且组件可以兼容老页面和新页面是本文的结果。<br>首先会介绍375px方案和rem方案的实现原理。</p>
+</blockquote>
+<a id="more"></a>
+<p>###375px方案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=375, user-scalabe=no&quot;&gt;</div></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;375px方案的页面开发过程对新人非常的友好，利用页面的布局视口（layout viewport）为固定值375px，和移动端浏览器窗口的自动缩放功能（视觉视口==布局视口），可以很好的在大部分移动设备上展示375px宽度的内容。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体的开发前提是设计师给到一份750px宽的设计稿，前端同学根据ps量的像素的50%进行css书写。若一个banner宽度量的为750px，在css中编写为<code>width: 375px</code>。至于为什么是2倍的设计稿，可以参考<a href="http://www.html-js.com/article/Mobile-terminal-H5-mobile-terminal-HD-multi-screen-adaptation-scheme%203041" target="_blank" rel="external">移动端高清、多屏适配方案</a>这篇文章，可以找到答案。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;375px方案相对于把meta[viewport]中的width属性设置成<code>device-width</code>,然后通过媒体查询写几套css规则来说已经是非常方便了。把所有不同屏幕尺寸的手机的布局视口（layout viewport）设置成一个固定的值375px，无需考虑其他屏幕尺寸的情况。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但375px方案的实现原理在某些安卓原生浏览器上有兼容问题，会产生一个重要bug — 在某些安卓原生浏览器或webview中会出现视觉视口小于布局视口的情况。直观的显示就是页面会出现左右滑动。如下图：</p>
+<p><img src="http://7xpcne.com1.z0.glb.clouddn.com/viewport-%E5%AE%89%E5%8D%93%E5%B7%A6%E5%8F%B3%E6%BB%91%E5%8A%A8.gif" alt="375bug"></p>
+<p>而在上文也提到了375px方案得以实现就是依靠浏览器的原生能力 — 迫使视觉视口等于布局视口。我们将这种情况下的<code>document.documentElement.clientWidth(布局视口)</code>与<code>window.innerWidth(视觉视口)</code>打印看看。</p>
+<p><img src="http://7xpcne.com1.z0.glb.clouddn.com/iewport1.jpg" alt=""><br><img src="http://7xpcne.com1.z0.glb.clouddn.com/iewport2.jpg" alt=""></p>
+<p>浏览器的缩放效果没有实现，至于为什么，先看两条关于缩放的总结公式/经验。</p>
+<p>一、meta标签内没有设置initial-scale的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">浏览器计算出的缩放值 = layout viewport width（布局视口） / ideal viewport width（理想视口）</div><div class="line"></div><div class="line">visual viewport width（视觉视口） = 浏览器计算出的缩放值 * ideal viewport width （理想视口）</div><div class="line">===》</div><div class="line">layout viewport width === visual viewport width // true</div></pre></td></tr></table></figure>
+<p>经过上述计算会将视觉视口会等于布局视口，布局上的所有内容都会出现在手机屏幕上。出现之前提到的bug的问题出在计算视觉视口上，<strong>浏览器会将所有计算出的缩放值都默认等于1</strong>，所以不管我们将布局视口设置能375还是其他任意值，视觉视口永远会是<code>1 * ideal viewport width （理想视口）</code>。ps：此款安卓机型的理想视口等于360.</p>
+<p>二、meta标签内设置了initial-scale的值的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visual viewport width（视觉视口） = initial-scale（meta 标签内设置的初始缩放值） * ideal viewport width（理想视口又称设备独立像素）</div><div class="line"></div><div class="line">layout viewport width = visual viewport width</div></pre></td></tr></table></figure>
+<p>解释：第二条总结经验正是rem伸缩方案flexiblejs的核心思想，设置了initial-scale后浏览器会计算出视觉视口，继而将布局视口的值自动设置成视觉视口的值。达到在屏幕上完整呈现布局上的内容。</p>
+<p>但是在同样的安卓原生浏览器上，不管我们将initial-scale设置成多少，浏览器都默认值为1。所以视觉视口和布局视口永远都等于<code>1 * ideal viewport width</code>这个问题的hack办法在flexible.js里也有所体现。</p>
+<p>375px方案就解释到这里，至于为何是375而不是其他的值比如360、320等，可以参考<a href="http://www.html-js.com/article/Mobile-terminal-H5-mobile-terminal-HD-multi-screen-adaptation-scheme%203041" target="_blank" rel="external">移动端高清、多屏适配方案</a>以及<a href="http://lvdada.org/2016/01/28/viewport-and-flexibleJs/" target="_blank" rel="external">viewport-and-flexible.js</a>， 在后篇文章中也有介绍3种视口的一些概念。</p>
+<p>###rem方案</p>
+<p>rem方案的目标也是用一套相同的度量标准适配所有屏幕大小的移动设备，在不同屏下进行正确的缩放。假设<code>10rem</code>宽在iphone5上是屏幕宽的一半，那么<code>10rem</code>在iphone6、iphone6plus、三星note等等机型上都显示为屏幕宽的一半。</p>
+<p>我们知道rem所对应的px值是基于html标签上的<code>font-size</code>值进行换算的。若</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">html &#123;</div><div class="line">	font-size: 20px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">10rem === 200px //true</div></pre></td></tr></table></figure>
+<p>为了适配缩放所有设备，就要写个脚本动态设置html的fontSize值。同时要对页面的布局视口（layout viewport）和设计稿做一个划分约定，这里就约定这个值为10。（理论上可以任何值）</p>
+<p><img src="http://7xpcne.com1.z0.glb.clouddn.com/26D7C3B3-AFC6-4AA3-AE99-0ACF49415211.jpeg" alt=""></p>
+<p><img src="http://7xpcne.com1.z0.glb.clouddn.com/01DCE243-96A5-41C5-B93D-C77C2CF9CCE3.jpeg" alt=""></p>
+<p>由以上两幅图可以知道，设计稿的一个区块对应1rem，布局视口的一个区块也对应1rem。而每个机型的布局视口该如何确定，flexible.js利用了上面提到的公式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visual viewport width（视觉视口） = initial-scale（meta 标签内设置的初始缩放值） * ideal viewport width（理想视口又称设备独立像素）</div><div class="line"></div><div class="line">浏览器自动将 layout viewport width = visual viewport width</div></pre></td></tr></table></figure>
+<p>之前也提到了<code>initial-scale</code>不为1的情况下部分安卓机型有bug，所以这里可以将initial-scale规定设置成1。</p>
+<p>拿iphone6为例：理想视口为375px，经计算布局视口和视觉视口都等于375，html的fontSize等于37.5px。若设计稿量的是10个区块大小，那么在编写css时就写10rem，对应的width等于<code>37。5 * 10 = 375px</code>正好布满整个布局视口。</p>
+<p>在flexible.js中对iphone设备的initial-scale值进行动态设置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var isAndroid = win.navigator.appVersion.match(/android/gi);</div><div class="line">var isIPhone = win.navigator.appVersion.match(/iphone/gi);</div><div class="line">var devicePixelRatio = win.devicePixelRatio;</div><div class="line">if (isIPhone) &#123;</div><div class="line">    // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案</div><div class="line">    if (devicePixelRatio &gt;= 3 &amp;&amp; (!dpr || dpr &gt;= 3)) &#123;                </div><div class="line">        dpr = 3;</div><div class="line">    &#125; else if (devicePixelRatio &gt;= 2 &amp;&amp; (!dpr || dpr &gt;= 2))&#123;</div><div class="line">        dpr = 2;</div><div class="line">    &#125; else &#123;</div><div class="line">        dpr = 1;</div><div class="line">    &#125;</div><div class="line">&#125; else &#123;</div><div class="line">    // 其他设备下，仍旧使用1倍的方案</div><div class="line">    dpr = 1;</div><div class="line">&#125;</div><div class="line">scale = 1 / dpr; // initial-scale</div></pre></td></tr></table></figure>
+<p>此处将initial-scale根据dpr动态设置是为了解决retina屏下border: 1px问题。而将安卓设备的dpr全部设置成1就是hack了之前提到的initial-scale在部分安卓机子上只能为1的bug。</p>
+<p>回到<code>border: 1px</code>问题，有些设计师在750px的设计稿中设计了一条1px的边框线，而这个1px的边框线在各机型上最好的效果实际是占设备物理像素的1px。</p>
+<p>拿iphone5和初代iphone为例：若设置<code>initial-scale=1</code>，那么布局视口为320px，但是iphone5的物理像素宽为640px，那就代表了1个css像素包含了4个物理像素（2x2）。而初代iphone的布局视口和物理像素都为320px如图：</p>
+<p><img src="http://7xpcne.com1.z0.glb.clouddn.com/A879CDC7-085A-40B1-A862-ECF480417909.png" alt=""></p>
+<p>在两者手机上显示的效果1px是一模一样的，但是iphone5包含着4倍的物理像素，就取上下高度而言，在iphone5上只用编写<code>border: 0.5px</code>就可以了。</p>
+<p>但是部分机型对于0.5是不识别的，会直接赋值0。而我们想要做的就是令border的宽等于1个物理像素。我们可以这样做，根据window.devicePixelRatio属性动态缩放layout viewport，使之与屏幕的物理像素相同。这样我们只用在css里编写<code>border: 1px</code>，对应的就是物理像素的1px，border：1问题完美解决。</p>
+<h3 id="两种方案如何兼容"><a href="#两种方案如何兼容" class="headerlink" title="两种方案如何兼容"></a>两种方案如何兼容</h3><p>首先要考虑到组件也用rem进行布局，并且组件要在px布局和rem布局中都能兼容。那么就要全局head引入flexible.js的js脚本。</p>
+<p>在375px布局方案里meta[viewport]已经设置，那么在flexible脚本中就要进行判断，已经设置viewport的就沿用，不动态创建meta[viewport]。</p>
+<p>组件的rem布局要依赖html标签的font-size值，在新页面rem布局中已经实现。而在375px布局中，flexiblejs根据固定layout viewport值– 375进行计算，那么所有屏幕尺寸下的页面html标签font-size值都为<code>37.5px</code>。</p>
+<p>还有一个问题，在375px布局中，全局css环境中设置了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">html, body &#123;</div><div class="line">	font-size: 100%</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>而所有的浏览器实现默认字体大小为<code>16px</code>，所以在老页面中有些字没有设置大小，默认是16px，引入了flexible后html上的font-size为37.5px,body标签上的字体大小就会变成<code>37.5 * 100% = 37.5px</code>,而没有设置字体大小的字体就会变成37.5px，需要在flexible.js中设置针对这种情况。</p>
+<pre><code>if (doc.readyState === &apos;complete&apos;) {
+        doc.body.style.fontSize = 16 + &apos;px&apos;;
+    } else {
+        doc.addEventListener(&apos;DOMContentLoaded&apos;, function(e) {
+            doc.body.style.fontSize = 16 + &apos;px&apos;;
+        }, false);
+    }
+</code></pre><p>最后的结果就是：</p>
+<ul>
+<li>全局引入flexible.js文件。</li>
+<li>375px布局的老页面上html标签的font-size固定为37.5px。body上的font-size固定为16px。</li>
+<li>rem布局的新页面上html标签的font-size随不同机型而不同。</li>
+<li>组件编写一律按照rem布局，设计稿为750px，兼容新老页面。</li>
+</ul>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/05/29/js-new/" style="float: left;">
+        ← immutable学习笔记
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/07/18/闭包的应用场景/">
+        闭包的应用场景 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 怀朔. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/zhangzhaoxu" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
